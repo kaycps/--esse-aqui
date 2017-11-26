@@ -60,7 +60,7 @@
                                             Perfil
                                         </a>
                                         
-                                    </li>
+                                    </li> 
                                 
                                     <li>
                                         <a href="{{ route('logout') }}"
