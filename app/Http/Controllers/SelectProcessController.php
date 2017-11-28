@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\SelectProcess;
+use App\Career;
 use Illuminate\Http\Request;
 
 class SelectProcessController extends Controller
@@ -71,6 +72,7 @@ class SelectProcessController extends Controller
     public function show($id)
     {
         $selectprocess = SelectProcess::findOrFail($id);
+        
 
         return view('select-process.show', compact('selectprocess'));
     }

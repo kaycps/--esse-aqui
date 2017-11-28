@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $selectprocess->id }}</td>
                                     </tr>
-                                    <tr><th> DataInicio </th><td> {{ $selectprocess->dataInicio }} </td></tr><tr><th> DataFim </th><td> {{ $selectprocess->dataFim }} </td></tr><tr><th> Ativo </th><td> {{ $selectprocess->ativo }} </td></tr><tr><th> Descrição </th><td> {{ $selectprocess->descrição }} </td></tr>
+                                    <tr><th> DataInicio </th><td> {{ $selectprocess->dataInicio }} </td></tr><tr><th> DataFim </th><td> {{ $selectprocess->dataFim }} </td></tr><tr><th> Cursos </th><td>  </td></tr><tr><th> Descrição </th><td> {{ $selectprocess->descrição }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
