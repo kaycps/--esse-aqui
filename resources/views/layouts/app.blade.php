@@ -54,13 +54,7 @@
                                 <ul class="dropdown-menu">
 
                                    
-                                    <li>
-                                        <a href="{{ url('/profile/' . Auth::user()->profile->id) . '/edit' }}">
-                                            
-                                            Perfil
-                                        </a>
-                                        
-                                    </li> 
+                                     
                                 
                                     <li>
                                         <a href="{{ route('logout') }}"
