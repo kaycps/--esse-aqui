@@ -25,9 +25,9 @@ class Adress extends Model
      *
      * @var array
      */
-    protected $fillable = ['Rua', 'numeroEndereço', 'cep', 'bairro', 'complemento', 'cidade', 'estado', 'paris', 'tipo'];
+    protected $fillable = ['Rua', 'numeroEndereço', 'cep', 'bairro', 'complemento', 'cidade', 'estado', 'pais', 'tipo'];
 
-    public function profiles()
+    public function profile()
     {
         return $this->belongsTo('App\Profile');
     }

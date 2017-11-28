@@ -21,7 +21,7 @@ class CreateAdressesTable extends Migration
             $table->string('complemento')->nullable();
             $table->string('cidade')->nullable();
             $table->string('estado')->nullable();
-            $table->string('paris')->nullable();
+            $table->string('pais')->nullable();
             $table->string('tipo')->nullable();
             $table->timestamps();
         });

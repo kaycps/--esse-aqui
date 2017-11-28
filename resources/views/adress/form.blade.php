@@ -40,11 +40,11 @@
         <input class="form-control" name="estado" type="text" id="estado" value="{{ $adress->estado or ''}}" >
         {!! $errors->first('estado', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('paris') ? 'has-error' : ''}}">
-    <label for="paris" class="col-md-4 control-label">{{ 'Paris' }}</label>
+</div><div class="form-group {{ $errors->has('pais') ? 'has-error' : ''}}">
+    <label for="pais" class="col-md-4 control-label">{{ 'pais' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="paris" type="text" id="paris" value="{{ $adress->paris or ''}}" >
-        {!! $errors->first('paris', '<p class="help-block">:message</p>') !!}
+        <input class="form-control" name="pais" type="text" id="pais" value="{{ $adress->pais or ''}}" >
+        {!! $errors->first('pais', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('tipo') ? 'has-error' : ''}}">
     <label for="tipo" class="col-md-4 control-label">{{ 'Tipo' }}</label>

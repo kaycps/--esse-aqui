@@ -77,17 +77,20 @@ class ProfileController extends Controller
         $profile->telefone = $request->input ('Telefone');
         $profile->escolaridade = $request->input ('Escolaridade');
         $profile->emissorRG = $request->input ('EmissorRG');   
-        $profile->user_id = $user->id;
-
-        
+        $profile->user_id = $user->id;        
 
        
         
         if ($profile->save()) {
-            return redirect()->route('home')->with('message', 'Cadastro salvo com sucesso.');
+
+
+            return redirect()->route('adress.create')->with('message', 'Cadastro salvo com sucesso.');
+
         } else {
             return redirect()->route('profile.create')->with('message', 'Favor corrigir os erros encontrados.');
         }
+
+
 
         
     }
@@ -129,11 +132,10 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $profile = profile::findOrFail($id);               
         
-        $requestData = $request->all();
-        
-        $profile = profile::findOrFail($id);
-        $profile->update($requestData);
+        $profile->update($request->all());
 
         return redirect('profile')->with('flash_message', 'profile updated!');
     }

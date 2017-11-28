@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Profile;
 use App\Adress;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+
+use Illuminate\Support\Facades\Auth;
 
 class AdressController extends Controller
 {
@@ -28,7 +31,7 @@ class AdressController extends Controller
                 ->orWhere('complemento', 'LIKE', "%$keyword%")
                 ->orWhere('cidade', 'LIKE', "%$keyword%")
                 ->orWhere('estado', 'LIKE', "%$keyword%")
-                ->orWhere('paris', 'LIKE', "%$keyword%")
+                ->orWhere('pais', 'LIKE', "%$keyword%")
                 ->orWhere('tipo', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
@@ -58,9 +61,30 @@ class AdressController extends Controller
     public function store(Request $request)
     {
         
-        $requestData = $request->all();
-        
-        Adress::create($requestData);
+      $user = Auth::user();
+      
+
+       $adress = new Adress;
+       $adress->Rua = $request->input('Rua');
+       $adress->numeroEndereço = $request->input('numeroEndereço');
+       $adress->cep = $request->input('cep');
+       $adress->bairro = $request->input('bairro');
+       $adress->complemento = $request->input('complemento');
+       $adress->cidade = $request->input('cidade');
+       $adress->estado = $request->input('estado');
+       $adress->pais = $request->input('pais');
+       $adress->tipo = $request->input('tipo'); 
+
+       $adress->profile_id = $user->id;
+      
+       $adress->save();
+
+       if ($adress->save()) {
+            return redirect()->route('home')->with('message', 'Cadastro salvo com sucesso.');
+
+        } else {
+            return redirect()->route('adress.create')->with('message', 'Favor corrigir os erros encontrados.');
+        }
 
         return redirect('adress')->with('flash_message', 'Adress added!');
     }

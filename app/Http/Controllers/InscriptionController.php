@@ -51,7 +51,18 @@ class InscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $user = Auth::User();
+        $career = Career();
+        $selectprocess = SelectProcess();
+        $quota = Quotum();
+
+        $inscription = new Inscription;
+
+        $inscription->user_id = $user->id;
+        $inscription->career_id = $career->id;
+        $inscription->quota_id = $quota->id;
+        $inscription->select_process_id = $selectprocess->id;
+
         $requestData = $request->all();
         
         Inscription::create($requestData);
