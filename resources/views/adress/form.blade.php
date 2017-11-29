@@ -7,7 +7,7 @@
 </div><div class="form-group {{ $errors->has('numeroEndereço') ? 'has-error' : ''}}">
     <label for="numeroEndereço" class="col-md-4 control-label">{{ 'Numeroendereço' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="numeroEndereço" type="number" id="numeroEndereço" value="{{ $adress->numeroEndereço or ''}}" >
+        <input class="form-control" name="numeroEndereço" type="text" id="numeroEndereço" value="{{ $adress->numeroEndereço or ''}}" >
         {!! $errors->first('numeroEndereço', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('cep') ? 'has-error' : ''}}">
@@ -41,7 +41,7 @@
         {!! $errors->first('estado', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('pais') ? 'has-error' : ''}}">
-    <label for="pais" class="col-md-4 control-label">{{ 'pais' }}</label>
+    <label for="pais" class="col-md-4 control-label">{{ 'País' }}</label>
     <div class="col-md-6">
         <input class="form-control" name="pais" type="text" id="pais" value="{{ $adress->pais or ''}}" >
         {!! $errors->first('pais', '<p class="help-block">:message</p>') !!}

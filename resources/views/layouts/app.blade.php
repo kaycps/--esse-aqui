@@ -54,12 +54,16 @@
 
                                 <ul class="dropdown-menu">
 
-                                           <li>
-                                        <a href="{{ url('/profile/' . Auth::user()->profile->id) . '/edit' }}">
-                                            
-                                            Perfil
-                                        </a>
-                                        
+                                    <li>
+                                        @if (Auth::user()->profile)
+                                            <a href="{{ url('/profile/' . Auth::user()->profile->id) . '/edit' }}">
+                                                Perfil
+                                            </a>
+                                        @else
+                                            <a href="{{ url('/profile/create') }}">
+                                                Perfil
+                                            </a>
+                                        @endif
                                     </li>
 
                                      
