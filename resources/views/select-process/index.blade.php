@@ -30,14 +30,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>N°</th><th>DataInicio</th><th>DataFim</th><th>Nome</th><th>Actions</th>
+                                        <th>N°</th><th>Nome</th><th>Data Inicial</th><th>Data Final</th><th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($selectprocess as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->dataInicio }}</td><td>{{ $item->dataFim }}</td><td>{{ $item->nome }}
+                                        <td>{{ $loop->iteration or $item->id }}</td><td>{{ $item->nome }}
+                                        <td>{{ $item->dataInicio }}</td><td>{{ $item->dataFim }}</td>
                                         <td>
                                             <a href="{{ url('/select-process/' . $item->id) }}" title="View SelectProcess"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                              <!--<a href="{{ url('/select-process/' . $item->id . '/edit') }}" title="Edit SelectProcess"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

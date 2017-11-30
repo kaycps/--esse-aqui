@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">profile {{ $profile->id }}</div>
+                    <div class="panel-heading">Perfil {{ $profile->id }}</div>
                     <div class="panel-body">
 
                         <a href="{{ url('/profile') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
@@ -28,6 +28,7 @@
                                         <th>ID</th><td>{{ $profile->id }}</td>
                                     </tr>
                                     <tr><th> Nome </th><td> {{ $profile->nome }} </td></tr><tr><th> RG </th><td> {{ $profile->rg }} </td></tr><tr><th> CPF </th><td> {{ $profile->cpf }} </td></tr>
+                                    <tr><th> Escolaridade </th><td> {{ $profile->escolaridade }} </td></tr><tr><th> Data de Nascimento </th><td> {{ $profile->dataNascimento }} </td></tr><tr><th> Sexo </th><td> {{ $profile->sexo }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

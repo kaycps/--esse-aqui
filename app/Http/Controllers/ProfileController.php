@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Profile;
+use App\SpecialNeed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -119,6 +120,8 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = Profile::findOrFail($id);
+        $specialNeeds = SpecialNeed::all();
+
         return view('profiles.edit')->with('profile', $profile);
     }
 
@@ -137,7 +140,7 @@ class ProfileController extends Controller
         
         $profile->update($request->all());
 
-        return redirect('profile')->with('flash_message', 'profile updated!');
+        return redirect('adress/'. $profile->id . '/edit')->with('flash_message', 'profile updated!');
     }
 
     /**

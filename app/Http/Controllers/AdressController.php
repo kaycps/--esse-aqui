@@ -133,7 +133,7 @@ class AdressController extends Controller
         $adress = Adress::findOrFail($id);
         $adress->update($requestData);
 
-        return redirect('adress')->with('flash_message', 'Adress updated!');
+        return redirect('home')->with('flash_message', 'Perfil Atualizado!');
     }
 
     /**
