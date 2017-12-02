@@ -25,6 +25,7 @@
                             <table class="table table-borderless">
                                 <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <tr>
                                         <th>ID</th><td>{{ $selectprocess->id }}</td>
                                     </tr>
@@ -33,6 +34,8 @@
                                     <th> Curso </th><td> {{ $selectprocess->descrição }} </td></tr>
                                     <th> Vagas </th><td> {{ $selectprocess->descrição }} </td></tr>
 =======
+=======
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
                                     <tr><th>ID</th><td>{{ $selectprocess->id }}</td></tr>
                                     <tr><th> Data Inicial </th><td> {{ $selectprocess->dataInicio }} </td></tr>
                                     <tr><th> Data Final </th><td> {{ $selectprocess->dataFim }} </td></tr>
@@ -44,6 +47,9 @@
                                         </select>
                                     </div>
                                     </td> </tr>
+<<<<<<< HEAD
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
+=======
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
                                 </tbody>
                             </table>

@@ -9,14 +9,20 @@
             <input class="form-control" name="nome" type="text" id="nome" value="{{ $profile->nome or ''}}" >
             {!! $errors->first('nome', '<p class="help-block">:message</p>') !!}
 <<<<<<< HEAD
+<<<<<<< HEAD
         </div></div>
     
 </div><div class="form-group {{ $errors->has('RG') ? 'has-error' : ''}}">
 =======
+=======
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
         </div>
         </div>   
 </div>
 <div class="form-group {{ $errors->has('RG') ? 'has-error' : ''}}">
+<<<<<<< HEAD
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
+=======
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
     <label for="RG" class="col-md-4 control-label">{{ 'Rg' }}</label>
     <div class="col-md-3">
@@ -31,8 +37,13 @@
         {!! $errors->first('emissorRG', '<p class="help-block">:message</p>') !!}
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 </div><div class="form-group {{ $errors->has('CPF') ? 'has-error' : ''}}">
+=======
+</div>
+<div class="form-group {{ $errors->has('CPF') ? 'has-error' : ''}}">
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 =======
 </div>
 <div class="form-group {{ $errors->has('CPF') ? 'has-error' : ''}}">
@@ -45,7 +56,11 @@
     
 </div><div class="form-group {{ $errors->has('DataNascimento') ? 'has-error' : ''}}">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <label for="DataNascimento" class="col-md-4 control-label">{{ 'Data de nascimento' }}</label>
+=======
+    <label for="DataNascimento" class="col-md-4 control-label">{{ 'Data de Nascimento' }}</label>
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 =======
     <label for="DataNascimento" class="col-md-4 control-label">{{ 'Data de Nascimento' }}</label>
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
@@ -68,7 +83,11 @@
     
 </div><div class="form-group {{ $errors->has('NomePai') ? 'has-error' : ''}}">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <label for="NomePai" class="col-md-4 control-label">{{ 'Nome do pai' }}</label>
+=======
+    <label for="NomePai" class="col-md-4 control-label">{{ 'Nome do Pai' }}</label>
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 =======
     <label for="NomePai" class="col-md-4 control-label">{{ 'Nome do Pai' }}</label>
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
@@ -79,7 +98,11 @@
     
 </div><div class="form-group {{ $errors->has('NomeMãe') ? 'has-error' : ''}}">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <label for="NomeMãe" class="col-md-4 control-label">{{ 'Nome da mãe' }}</label>
+=======
+    <label for="NomeMãe" class="col-md-4 control-label">{{ 'Nome da Mãe' }}</label>
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 =======
     <label for="NomeMãe" class="col-md-4 control-label">{{ 'Nome da Mãe' }}</label>
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
@@ -136,6 +159,7 @@
         {!! $errors->first('escolaridade', '<p class="help-block">:message</p>') !!}
         </div></div>
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 </div><div class="form-group {{ $errors->has('EmissorRG') ? 'has-error' : ''}}">
     <label for="EmissorRG" class="col-md-4 control-label">{{ 'Emissor rg' }}</label>
@@ -218,6 +242,8 @@
     }
 </script>        
 =======
+=======
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 </div>
 
 <div class="form-group {{ $errors->has('Escolaridade') ? 'has-error' : ''}}">
@@ -238,4 +264,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
+=======
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f

@@ -12,6 +12,7 @@
         {!! $errors->first('dataInicio', '<p class="help-block">:message</p>') !!}
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </div>
 
 <div class="form-group {{ $errors->has('dataFim') ? 'has-error' : ''}}">
@@ -20,10 +21,15 @@
 </div><div class="form-group {{ $errors->has('dataFim') ? 'has-error' : ''}}">
     <label for="dataFim" class="col-md-4 control-label">{{ 'Data Final' }}</label>
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
+=======
+</div><div class="form-group {{ $errors->has('dataFim') ? 'has-error' : ''}}">
+    <label for="dataFim" class="col-md-4 control-label">{{ 'Data Final' }}</label>
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
     <div class="col-md-6">
         <input class="form-control" name="dataFim" type="date" id="dataFim" value="{{ $selectprocess->dataFim or ''}}" >
         {!! $errors->first('dataFim', '<p class="help-block">:message</p>') !!}
     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 </div>       
     
@@ -38,12 +44,19 @@
 =======
 </div>
     
+=======
+</div>
+    
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 
 
     
 
         
     
+<<<<<<< HEAD
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
+=======
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 <div class="form-group {{ $errors->has('descrição') ? 'has-error' : ''}}">
     <label for="descrição" class="col-md-4 control-label">{{ 'Descrição' }}</label>

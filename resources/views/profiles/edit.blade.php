@@ -26,7 +26,11 @@
                             {{ csrf_field() }}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                             @include ('profiles.form')
+=======
+                            @include ('profiles.form', ['submitButtonText' => 'Atualizar'])
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 =======
                             @include ('profiles.form', ['submitButtonText' => 'Atualizar'])
 >>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
