@@ -16,7 +16,7 @@ class Profile extends Model
 
     public function special_needs()
     {
-        return $this->belongsToMany('App\SpecialNeed');
+        return $this->belongsToMany('App\SpecialNeed')->whithPivot('permanente','observacao');
     }
 
     public function adresses()

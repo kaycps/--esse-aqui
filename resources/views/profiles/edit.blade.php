@@ -5,9 +5,9 @@
         <div class="row">
             
 
-            <div class="col-md-12">
+            <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Editar Perfil{{ $profile->idprofile }}</div>
+                    <div class="panel-heading">Editar Perfil</div>
                     <div class="panel-body">
                         <a href="{{ url('/home') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
@@ -25,7 +25,11 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('profiles.form', ['submitButtonText' => 'Update'])
+<<<<<<< HEAD
+                            @include ('profiles.form')
+=======
+                            @include ('profiles.form', ['submitButtonText' => 'Atualizar'])
+>>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
 
                         </form>
 

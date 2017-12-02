@@ -25,5 +25,5 @@ Route::resource('select-process', 'SelectProcessController');
 Route::resource('special-need', 'SpecialNeedController');
 Route::resource('career', 'CareerController');
 Route::resource('quota', 'QuotaController');
-Route::resource('inscription', 'InscriptionController');
+Route::resource('select-process.inscription', 'InscriptionController');
 Route::resource('exemption', 'ExemptionController');

@@ -13,7 +13,7 @@ class SelectProcessHasCareer extends Migration
      */
     public function up()
     {
-         Schema::create('select_process_career', function (Blueprint $table) {
+         Schema::create('career_select_process', function (Blueprint $table) {
             $table->integer('select_process_id')->unsigned();
             $table->foreign('select_process_id')->references('id')->on('select_processes'); 
          

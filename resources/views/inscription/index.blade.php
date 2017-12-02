@@ -39,14 +39,15 @@
                                         <td>{{ $loop->iteration or $item->id }}</td>
                                         <td>{{ $item->pago }}</td><td>{{ $item->dataPagamento }}</td><td>{{ $item->dataInscrição }}</td>
                                         <td>
-                                            <a href="{{ url('/inscription/' . $item->id) }}" title="View Inscription"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/inscription/' . $item->id . '/edit') }}" title="Edit Inscription"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ route('select-process.inscription.show', [$id, $item->id]) }}" title="View Inscription"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <!--<a href="{{ url('/inscription/' . $item->id . '/edit') }}" title="Edit Inscription"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                                             <form method="POST" action="{{ url('/inscription' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-xs" title="Delete Inscription" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
+                                            -->
                                         </td>
                                     </tr>
                                 @endforeach

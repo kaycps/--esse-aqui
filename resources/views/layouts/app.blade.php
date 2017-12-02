@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -13,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 </head>
 <body>
     <div id="app">
@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <img src="{{ url('/') }}/img/logo.png">
                     </a>
                 </div>
 
@@ -54,24 +54,19 @@
 
                                 <ul class="dropdown-menu">
 
-                                  
-
-
-
-                                     <li>
-                                        <a href="{{ url('/profile/' . Auth::user()->profile->id) . '/edit' }}">
-                                            
-                                            Perfil
-                                        </a>
-                                        
+                                    <li>
+                                        @if (Auth::user()->profile)
+                                            <a href="{{ url('/profile/' . Auth::user()->profile->id) . '/edit' }}">
+                                                Perfil
+                                            </a>
+                                        @else
+                                            <a href="{{ url('/profile/create') }}">
+                                                Perfil
+                                            </a>
+                                        @endif
                                     </li>
 
-                               
-
-                                  
-                                    
-                                   
-                                    
+                                     
                                 
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -101,3 +96,4 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+

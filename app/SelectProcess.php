@@ -29,7 +29,7 @@ class SelectProcess extends Model
 
      public function careers()
     {
-        return $this->belongsToMany('App\Career');
+        return $this->belongsToMany('App\Career')->withPivot('vagas');
     }
 
     public function quotas()

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -25,7 +25,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('inscription.form', ['submitButtonText' => 'Update'])
+                            @include ('inscription.form2', ['submitButtonText' => 'Update'])
 
                         </form>
 

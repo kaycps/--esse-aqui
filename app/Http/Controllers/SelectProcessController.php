@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Career;
 use App\SelectProcess;
 use Illuminate\Http\Request;
 
@@ -40,8 +45,9 @@ class SelectProcessController extends Controller
      * @return \Illuminate\View\View
      */
     public function create()
-    {
-        return view('select-process.create');
+    {   
+        $career = Career::all();
+        return view('select-process.create')->with('career',$career);
     }
 
     /**
@@ -53,10 +59,16 @@ class SelectProcessController extends Controller
      */
     public function store(Request $request)
     {
-        
+         
+        $career = Career::all();
         $requestData = $request->all();
         
         SelectProcess::create($requestData);
+
+       /*$select_process_career = new select_process_career();
+        $select_process_career->career_id = $request->curso;
+        $select_process_career->select_process_id = $
+        $select_process_career->vagas = $request->vagas*/
 
         return redirect('select-process')->with('flash_message', 'SelectProcess added!');
     }
@@ -69,7 +81,8 @@ class SelectProcessController extends Controller
      * @return \Illuminate\View\View
      */
     public function show($id)
-    {
+    {   
+        
         $selectprocess = SelectProcess::findOrFail($id);
 
         return view('select-process.show', compact('selectprocess'));
@@ -85,8 +98,9 @@ class SelectProcessController extends Controller
     public function edit($id)
     {
         $selectprocess = SelectProcess::findOrFail($id);
+        $career = Career::all();
 
-        return view('select-process.edit', compact('selectprocess'));
+        return view('select-process.edit', compact('selectprocess', 'career'));
     }
 
     /**
@@ -99,11 +113,22 @@ class SelectProcessController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $requestData = $request->all();
-        
         $selectprocess = SelectProcess::findOrFail($id);
-        $selectprocess->update($requestData);
+        $selectprocess->dataInicio = $request->dataInicio;
+        $selectprocess->dataFim = $request->dataFim;
+        $selectprocess->nome = $request->nome;
+        $selectprocess->descrição = $request->descrição;
+        $selectprocess->save();
+
+        $dados = [];
+
+        foreach($request->cursos as $curso) {
+            if(array_key_exists('id', $curso)) {
+                $dados[$curso['id']] = ['vagas' => $curso['vagas']];
+            }
+        }
+
+        $selectprocess->careers()->sync($dados);
 
         return redirect('select-process')->with('flash_message', 'SelectProcess updated!');
     }

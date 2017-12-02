@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Career;
 use App\Inscription;
+use App\Quotum;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\SelectProcess;
 
 class InscriptionController extends Controller
 {
@@ -15,7 +19,7 @@ class InscriptionController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
         $keyword = $request->get('search');
         $perPage = 25;
@@ -29,7 +33,7 @@ class InscriptionController extends Controller
             $inscription = Inscription::paginate($perPage);
         }
 
-        return view('inscription.index', compact('inscription'));
+        return view('inscription.index', compact('inscription', 'id'));
     }
 
     /**
@@ -37,9 +41,13 @@ class InscriptionController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('inscription.create');
+    public function create($id)
+    {   
+        $career = Career::all();
+        $quota = Quotum::all();
+
+        return view('inscription.create')->with('career',$career)->with('quota',$quota)->with('id', $id);
+       
     }
 
     /**
@@ -49,25 +57,30 @@ class InscriptionController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $user = Auth::User();
-        $career = Career();
-        $selectprocess = SelectProcess();
-        $quota = Quotum();
+        $user = Auth::user();
+        $career = Career::all();        
+        $quota = Quotum::all();
+        $SelectProcess = SelectProcess::find($id); 
 
         $inscription = new Inscription;
 
         $inscription->user_id = $user->id;
-        $inscription->career_id = $career->id;
-        $inscription->quota_id = $quota->id;
-        $inscription->select_process_id = $selectprocess->id;
+        $inscription->dataPagamento = $request->dataPagamento;
+        $inscription->dataInscrição = $request->dataInscrição;
+        $inscription->career_id = $request->curso;
+        $inscription->quota_id = $request->quota;
+        $inscription->select_process_id = $SelectProcess->id;
 
-        $requestData = $request->all();
+        if ($inscription->save()) {            
+            return redirect(route('select-process.inscription.index', $id))->with('flash_message', 'Inscription added!');
+        } else {
+            return redirect(route('select-process.inscription.create', $id))->with('flash_message', 'Deu erro.');
+        }
+
         
-        Inscription::create($requestData);
 
-        return redirect('inscription')->with('flash_message', 'Inscription added!');
     }
 
     /**
@@ -77,9 +90,9 @@ class InscriptionController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show($id, $id_inscription)
     {
-        $inscription = Inscription::findOrFail($id);
+        $inscription = Inscription::findOrFail($id_inscription);
 
         return view('inscription.show', compact('inscription'));
     }

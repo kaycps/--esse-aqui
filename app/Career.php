@@ -27,9 +27,9 @@ class Career extends Model
      */
     protected $fillable = ['nome'];
 
-    public function select_processes()
+    public function selectProcesses()
     {
-        return $this->belongsToMany('App\SelectProcess');
+        return $this->belongsToMany('App\SelectProcess')->withPivot('vagas');
     }
     
     public function inscription()
