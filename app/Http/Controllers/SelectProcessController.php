@@ -64,9 +64,10 @@ class SelectProcessController extends Controller
      */
     public function store(Request $request)
     {
-        
+       
         $career = Career::all();
         $requestData = $request->all();
+
         
         $selectprocess = new SelectProcess;
         $selectprocess->dataInicio = $request->dataInicio;
@@ -74,12 +75,8 @@ class SelectProcessController extends Controller
         $selectprocess->nome = $request->nome;
         $selectprocess->descrição = $request->descrição;
 
-        
 
-       /*$select_process_career = new select_process_career();
-        $select_process_career->career_id = $request->curso;
-        $select_process_career->select_process_id = $
-        $select_process_career->vagas = $request->vagas*/
+
 
           if ($selectprocess->save()) {            
             return redirect('select-process')->with('message', 'SelectProcess added!');
