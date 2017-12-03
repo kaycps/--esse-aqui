@@ -9,7 +9,6 @@ use App\Profile;
 use App\SpecialNeed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\SpecialNeed;
 
 class ProfileController extends Controller
 {
