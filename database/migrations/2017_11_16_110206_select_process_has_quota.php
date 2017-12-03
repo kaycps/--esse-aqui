@@ -32,6 +32,8 @@ class SelectProcessHasQuota extends Migration
      */
     public function down()
     {
-        //
+        $table->dropForeign(['quota_id']);
+        $table->dropForeign(['select_process_id']);
+       
     }
 }

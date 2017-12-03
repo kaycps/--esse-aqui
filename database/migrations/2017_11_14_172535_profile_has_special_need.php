@@ -33,6 +33,7 @@ class ProfileHasSpecialNeed extends Migration
      */
     public function down()
     {
-        //
+         $table->dropForeign(['profile_id']);
+         $table->dropForeign(['special_need_id']);
     }
 }

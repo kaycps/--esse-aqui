@@ -46,6 +46,6 @@ class AddFkSelectProcessesInscriptions extends Migration
         $table->dropForeign(['select_process_id']);
         $table->dropForeign(['career_id']);
         $table->dropForeign(['user_id']);
-        $table->dropForeign(['quotas_id']);
+        $table->dropForeign(['quota_id']);
     }
 }

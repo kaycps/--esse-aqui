@@ -32,6 +32,7 @@ class SelectProcessHasCareer extends Migration
      */
     public function down()
     {
-        //
+        $table->dropForeign(['select_process_id']);
+        $table->dropForeign(['career_id']);
     }
 }
