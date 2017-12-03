@@ -29,9 +29,19 @@ Route::resource('select-process.inscription', 'InscriptionController');
 
 Route::resource('admin', 'AdminController');
 
-Route::get('select-process/create', ['middleware' => 'admin', function () {
+Route::group(['middleware' => 'admin'], function() {
+	Route::get('select-process/create', function () {
     //
-}]);
-Route::get('select-process/edit', ['middleware' => 'admin', function () {
+	});
+	Route::get('select-process/edit', function () {
     //
-}]);
+	});
+
+});
+
+// Route::get('select-process/create', ['middleware' => 'admin', function () {
+//     //
+// }]);
+// Route::get('select-process/edit', ['middleware' => 'admin', function () {
+//     //
+// }]);
