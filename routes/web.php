@@ -26,4 +26,12 @@ Route::resource('special-need', 'SpecialNeedController');
 Route::resource('career', 'CareerController');
 Route::resource('quota', 'QuotaController');
 Route::resource('select-process.inscription', 'InscriptionController');
-Route::resource('exemption', 'ExemptionController');
+
+Route::resource('admin', 'AdminController');
+
+Route::get('select-process/create', ['middleware' => 'admin', function () {
+    //
+}]);
+Route::get('select-process/edit', ['middleware' => 'admin', function () {
+    //
+}]);

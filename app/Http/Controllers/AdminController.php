@@ -5,34 +5,48 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Exemption;
+use App\Profile;
+use App\SpecialNeed;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ExemptionController extends Controller
+class AdminController extends Controller
 {
+    //
     public function __construct()
     {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function index(Request $request)
+
+public function __construct()
+    {
+       $this->middleware('admin');
+   }
+
+public function index(Request $request)
     {
         $keyword = $request->get('search');
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $exemption = Exemption::where('homologado', 'LIKE', "%$keyword%")
-                ->orWhere('motivo', 'LIKE', "%$keyword%")
+            $profile = Profile::where('nome', 'LIKE', "%$keyword%")
+                ->orWhere('RG', 'LIKE', "%$keyword%")
+                ->orWhere('CPF', 'LIKE', "%$keyword%")
+                ->orWhere('DataNascimento', 'LIKE', "%$keyword%")
+                ->orWhere('Sexo', 'LIKE', "%$keyword%")
+                ->orWhere('NomePai', 'LIKE', "%$keyword%")
+                ->orWhere('NomeMãe', 'LIKE', "%$keyword%")
+                ->orWhere('Passaporte', 'LIKE', "%$keyword%")
+                ->orWhere('Naturalidade', 'LIKE', "%$keyword%")
+                ->orWhere('Telefone', 'LIKE', "%$keyword%")
+                ->orWhere('Escolaridade', 'LIKE', "%$keyword%")
+                ->orWhere('EmissorRG', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
-            $exemption = Exemption::paginate($perPage);
+            $profile = Profile::paginate($perPage);
         }
 
-        return view('exemption.index', compact('exemption'));
+        return view('admin.index', compact('admin'));
     }
 
     /**
@@ -42,7 +56,7 @@ class ExemptionController extends Controller
      */
     public function create()
     {
-        return view('exemption.create');
+        return view('admin.create');
     }
 
     /**
@@ -53,13 +67,9 @@ class ExemptionController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
-    {
+    {   
+       
         
-        $requestData = $request->all();
-        
-        Exemption::create($requestData);
-
-        return redirect('exemption')->with('flash_message', 'Exemption added!');
     }
 
     /**
@@ -71,9 +81,7 @@ class ExemptionController extends Controller
      */
     public function show($id)
     {
-        $exemption = Exemption::findOrFail($id);
-
-        return view('exemption.show', compact('exemption'));
+     
     }
 
     /**
@@ -85,9 +93,7 @@ class ExemptionController extends Controller
      */
     public function edit($id)
     {
-        $exemption = Exemption::findOrFail($id);
-
-        return view('exemption.edit', compact('exemption'));
+     
     }
 
     /**
@@ -100,13 +106,7 @@ class ExemptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $requestData = $request->all();
-        
-        $exemption = Exemption::findOrFail($id);
-        $exemption->update($requestData);
 
-        return redirect('exemption')->with('flash_message', 'Exemption updated!');
     }
 
     /**
@@ -118,8 +118,7 @@ class ExemptionController extends Controller
      */
     public function destroy($id)
     {
-        Exemption::destroy($id);
-
-        return redirect('exemption')->with('flash_message', 'Exemption deleted!');
+    
     }
 }
+

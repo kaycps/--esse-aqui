@@ -28,11 +28,17 @@
                     @endif
 
                     <div>
-                        <h3>Editais Abertos</h3>
-                        <br>            
+                        <h3>Página do Administrador</h3>
+                        <br>
                         
-                        <a href="{{ url('select-process') }}" class="btn btn-success btn-lg" role="button">Saiba Mais</a>
-                      
+                        
+                        <a href="{{ url('select-process') }}" class="btn btn-success btn-lg btn-block" role="button">Ver Editais Cadastrados</a>
+
+                         <a href="{{ url('career') }}" class="btn btn-success btn-lg btn-block" role="button">Cadastrar Cursos</a>
+
+                         <a href="{{ url('quota') }}" class="btn btn-success btn-lg btn-block" role="button" >Cadastrar Cotas</a>
+
+                         <a href="{{ url('special-need') }}" class="btn btn-success btn-lg btn-block" role="button" >Cadastrar Necessidades Especiais</a>
                     </div>
                    
                      
