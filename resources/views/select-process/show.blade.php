@@ -21,6 +21,7 @@
                         <br/>
                         <br/>
 
+        
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <tbody>
@@ -28,7 +29,9 @@
                                         <th>ID</th><td>{{ $selectprocess->id }}</td>
                                     </tr>
                                     <tr><th> DataInicio </th><td> {{ $selectprocess->dataInicio }} </td></tr><tr><th> DataFim </th><td> {{ $selectprocess->dataFim }} </td></tr><tr><!-- <th> Ativo </th><td> {{ $selectprocess->ativo }} </td> --></tr><tr><th> Descrição </th><td> {{ $selectprocess->descrição }} </td></tr>
-                                    foreach
+                                    
+        
+
                                     <th> Curso </th><td> {{ $selectprocess->descrição }} </td></tr>
                                     <th> Vagas </th><td> {{ $selectprocess->descrição }} </td></tr>
                                 </tbody>

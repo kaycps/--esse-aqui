@@ -62,7 +62,8 @@ class InscriptionController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request, $id)
-    {
+    {   
+
         $user = Auth::user();
         $career = Career::all();        
         $quota = Quotum::all();
@@ -98,7 +99,8 @@ class InscriptionController extends Controller
     {
         $inscription = Inscription::findOrFail($id_inscription);
 
-        return view('inscription.show', compact('inscription'));
+        return view('select-process.inscription.show', compact('inscription'));
+        
     }
 
     /**
@@ -108,11 +110,11 @@ class InscriptionController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit($id)
+    public function edit($id,$id_inscription)
     {
         $inscription = Inscription::findOrFail($id);
 
-        return view('inscription.edit', compact('inscription'));
+        return view('select-process.inscription.edit', compact('inscription'));
     }
 
     /**

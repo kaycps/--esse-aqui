@@ -26,6 +26,7 @@ class SelectProcessController extends Controller
      */
     public function index(Request $request)
     {
+
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -63,18 +64,30 @@ class SelectProcessController extends Controller
      */
     public function store(Request $request)
     {
-         
+        
         $career = Career::all();
         $requestData = $request->all();
         
-        SelectProcess::create($requestData);
+        $selectprocess = new SelectProcess;
+        $selectprocess->dataInicio = $request->dataInicio;
+        $selectprocess->dataFim = $request->dataFim;
+        $selectprocess->nome = $request->nome;
+        $selectprocess->descrição = $request->descrição;
+
+        
 
        /*$select_process_career = new select_process_career();
         $select_process_career->career_id = $request->curso;
         $select_process_career->select_process_id = $
         $select_process_career->vagas = $request->vagas*/
 
-        return redirect('select-process')->with('flash_message', 'SelectProcess added!');
+          if ($selectprocess->save()) {            
+            return redirect('select-process')->with('message', 'SelectProcess added!');
+        } else {
+            return redirect('select-process.create')->with('message', 'Deu erro.');
+        }
+
+        
     }
 
     /**
@@ -84,7 +97,7 @@ class SelectProcessController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {   
         
         $selectprocess = SelectProcess::findOrFail($id);
@@ -117,6 +130,7 @@ class SelectProcessController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $selectprocess = SelectProcess::findOrFail($id);
         $selectprocess->dataInicio = $request->dataInicio;
         $selectprocess->dataFim = $request->dataFim;
