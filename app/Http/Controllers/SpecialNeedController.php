@@ -14,11 +14,7 @@ class SpecialNeedController extends Controller
     {
         $this->middleware('auth');
     }
-    
-    public function __construct()
-    {
-       $this->middleware('admin');
-    }
+
     /**
      * Display a listing of the resource.
      *

@@ -36,6 +36,9 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('select-process/edit', function () {
     //
 	});
+	Route::get('admin', function () {
+    //
+	});
 
 });
 
