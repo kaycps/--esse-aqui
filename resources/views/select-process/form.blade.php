@@ -1,5 +1,5 @@
 <div class="form-group {{ $errors->has('dataInicio') ? 'has-error' : ''}}">
-    <label for="dataInicio" class="col-md-4 control-label">{{ 'Datainicio' }}</label>
+    <label for="dataInicio" class="col-md-4 control-label">{{ 'Data Inicial' }}</label>
     <div class="col-md-6">
         <input class="form-control" name="dataInicio" type="date" id="dataInicio" value="{{ $selectprocess->dataInicio or ''}}" >
         {!! $errors->first('dataInicio', '<p class="help-block">:message</p>') !!}
@@ -7,7 +7,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('dataFim') ? 'has-error' : ''}}">
-    <label for="dataFim" class="col-md-4 control-label">{{ 'Datafim' }}</label>
+    <label for="dataFim" class="col-md-4 control-label">{{ 'Data Final' }}</label>
     <div class="col-md-6">
         <input class="form-control" name="dataFim" type="date" id="dataFim" value="{{ $selectprocess->dataFim or ''}}" >
         {!! $errors->first('dataFim', '<p class="help-block">:message</p>') !!}

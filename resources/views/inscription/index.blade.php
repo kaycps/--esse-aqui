@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Inscription</div>
+                    <div class="panel-heading">Inscrição</div>
                     <div class="panel-body">
                         <a href="{{ url('/inscription/create') }}" class="btn btn-success btn-sm" title="Add New Inscription">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -30,7 +30,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Pago</th><th>DataPagamento</th><th>DataInscrição</th><th>Actions</th>
+                                        <th>#</th><th>Pago</th><th>Data de Pagamento</th><th>Data de Inscrição</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -90,9 +90,9 @@ class SelectProcessController extends Controller
 
              
                     
-            return redirect('select-process')->with('message', 'SelectProcess added!');
+            return redirect('select-process')->with('success_message', 'Processo seletivo adicionado!');
         } else {
-            return redirect('select-process.create')->with('message', 'Deu erro.');
+            return redirect('select-process.create')->with('error_message', 'Erro ao cadastrar.');
         }
 
         
