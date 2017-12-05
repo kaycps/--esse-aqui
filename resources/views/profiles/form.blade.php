@@ -119,20 +119,21 @@
 
 <div class="form-group ">
     <label  class="col-md-4 control-label"></label>
-    <div class="col-md-4">Possui ness? <br>
+    <div class="col-md-4">Possui necessidades? <br>
         <label class="radio-inline">
-            <input type="radio" name="Permanente" onclick="habilitar()">
+            <input type="radio" name="Permanente1" onclick="habilitar()">
             Sim            
         </label>
     </div>
     <br>
     <div class="col-md-2">
         <label class="radio-inline">
-            <input type="radio" name="Permanente"checked="checked" onclick="desabilitar()" >
+            <input type="radio" name="Permanente1" checked="checked" onclick="desabilitar()" >
             Não
         </label>        
     </div>
 </div>
+    <label  class="col-md-4 control-label"></label>
     <div class="col-md-6">
         <div class="input-group-addon">
             <i class="fa fa-commenting" style="font-size: 20px; "></i>

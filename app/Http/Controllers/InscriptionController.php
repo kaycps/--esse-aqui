@@ -47,10 +47,13 @@ class InscriptionController extends Controller
      */
     public function create($id)
     {   
+
         $career = Career::all();
         $quota = Quotum::all();
+        $inscription = Inscription::find($id);
+        $selectprocess = SelectProcess::find($id);
 
-        return view('inscription.create')->with('career',$career)->with('quota',$quota)->with('id', $id);
+        return view('inscription.create')->with('career',$career)->with('quota',$quota)->with('id', $id)->with('selectprocess',$selectprocess);
        
     }
 
@@ -63,9 +66,9 @@ class InscriptionController extends Controller
      */
     public function store(Request $request, $id)
     {   
-
+        dd($request);
         $user = Auth::user();
-        $career = Career::all();        
+        $career = Career::find($id);        
         $quota = Quotum::all();
         $SelectProcess = SelectProcess::find($id); 
 

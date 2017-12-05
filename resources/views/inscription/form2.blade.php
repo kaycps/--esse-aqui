@@ -1,5 +1,5 @@
 
-
+@if(Auth::user()->admin==1)
 <div class="form-group {{ $errors->has('dataPagamento') ? 'has-error' : ''}}">
     <label for="dataPagamento" class="col-md-4 control-label">{{ 'Datapagamento' }}</label>
     <div class="col-md-6">
@@ -16,15 +16,17 @@
         {!! $errors->first('dataInscrição', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+@endif
 
 
 <div class="form-group ">
     <label for="curso" class="col-md-4 control-label">{{ 'Curso' }}</label>
     <div class="col-md-6">
         <select name="curso">
-            <?php foreach($career as $career): ?>
+
+            @foreach($selectprocess->careers as $career)
             <option value="<?= $career->id ?>"><?= $career->nome ?></option>
-            <?php endforeach;?>
+            @endforeach
         </select>
         
     </div>

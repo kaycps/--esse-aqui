@@ -11,13 +11,15 @@
                     <div class="panel-body">
 
                         <a href="{{ url('/select-process') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <!-- <a href="{{ url('/select-process/' . $selectprocess->id . '/edit') }}" title="Edit SelectProcess"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        @if(Auth::user()->admin==1)
+                        <a href="{{ url('/select-process/' . $selectprocess->id . '/edit') }}" title="Edit SelectProcess"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                         <form method="POST" action="{{ url('selectprocess' . '/' . $selectprocess->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-danger btn-xs" title="Delete SelectProcess" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                        </form> -->
+                        </form> 
+                        @endif
                         <br/>
                         <br/>
 
