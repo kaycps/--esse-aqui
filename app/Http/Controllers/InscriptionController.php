@@ -47,7 +47,6 @@ class InscriptionController extends Controller
      */
     public function create($id)
     {   
-
         $career = Career::all();
         $quota = Quotum::all();
         $inscription = Inscription::find($id);

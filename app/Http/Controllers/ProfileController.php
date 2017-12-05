@@ -53,10 +53,9 @@ class ProfileController extends Controller
      * @return \Illuminate\View\View
      */
     public function create()
-    {
-
-        
-        return view('profiles.create');
+    {   
+        $specialneed = SpecialNeed::all();
+        return view('profiles.create')->with('specialneed',$specialneed);
     }
 
     /**
@@ -68,6 +67,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {   
+        
         $user = Auth::user();
         //dd($user->id);
 
@@ -84,11 +84,27 @@ class ProfileController extends Controller
         $profile->telefone = $request->input ('Telefone');
         $profile->escolaridade = $request->input ('Escolaridade');
         $profile->emissorRG = $request->input ('EmissorRG');   
-        $profile->user_id = $user->id;        
+        $profile->user_id = $user->id; 
 
-       
+          
+
+      
         
         if ($profile->save()) {
+
+
+            $x = [];
+
+                $profileSpecialNeed = $request->specialNeed;
+                foreach ($profileSpecialNeed  as $ps) {
+                    if (array_key_exists('id', $ps)) {
+                        $x[$ps['id']] = ['observação' => $ps['observação'],
+                                          'permanente'=>  $ps['permanente']];
+                    }
+                }
+
+
+                $profile->special_needs()->sync($x);
 
 
             return redirect()->route('adress.create')->with('message', 'Cadastro salvo com sucesso.');
@@ -126,9 +142,9 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = Profile::findOrFail($id);
-        $specialNeeds = SpecialNeed::all();
+        $specialneed = SpecialNeed::all();
 
-        return view('profiles.edit')->with('profile', $profile);
+        return view('profiles.edit')->with('profile', $profile)->with('specialneed',$specialneed);
     }
 
     /**
@@ -141,7 +157,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        
         $profile = profile::findOrFail($id);               
         
         $profile->update($request->all());

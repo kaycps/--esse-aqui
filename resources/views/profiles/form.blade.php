@@ -120,45 +120,55 @@
 <div class="form-group ">
     <label  class="col-md-4 control-label"></label>
     <div class="col-md-4">Possui necessidades? <br>
-        <label class="radio-inline">
-            <input type="radio" name="Permanente1" onclick="habilitar()">
-            Sim            
-        </label>
+       
     </div>
-    <br>
-    <div class="col-md-2">
-        <label class="radio-inline">
-            <input type="radio" name="Permanente1" checked="checked" onclick="desabilitar()" >
-            Não
-        </label>        
-    </div>
-</div>
-    <label  class="col-md-4 control-label"></label>
-    <div class="col-md-6">
-        <div class="input-group-addon">
-            <i class="fa fa-commenting" style="font-size: 20px; "></i>
-        </div>
-        <input id="ness" class="form-control input-md" name="descrição" type="text" required="required" placeholder="Descrição" disabled>
-        <input id="ness1" type="text" name="Observação" required="required" placeholder="Observação" class="form-control input-md" disabled>        
-    </div>
+    <br>   
 </div>
 
-<div class="form-group ">
+@foreach($specialneed as $sp)
+    <div class="form-group ">
+        <label for="curso" class="col-md-4 control-label"></label>
+        <div class="col-md-6">
+            <input type="checkbox" name="specialNeed[{{$sp->id}}][id]" value="{{$sp->id}}" />
+            <label>{{ $sp->descrição }}</label>
+        </div>
+    </div>
+
+   <div class="form-group ">
     <label  class="col-md-4 control-label"></label>
     <div class="col-md-4">Permanente<br>
         <label class="radio-inline">
-            <input type="radio" name="Permanente" id="ness2" value="1" disabled>
+            <input type="radio" name="specialNeed[{{$sp->id}}][permanente]" id="sim" value="1" >
             Sim            
         </label>
     </div>
     <br>
     <div class="col-md-4">
         <label class="radio-inline">
-            <input type="radio" name="Permanente" id="ness3" value="2" checked="checked" disabled >
+            <input type="radio" name="specialNeed[{{$sp->id}}][permanente]" id="nao" value="0" checked="checked"  >
             Não
         </label>        
     </div>
 </div>
+
+
+
+<div class="form-group">
+    <label for="Telefone" class="col-md-4 control-label">{{ 'Observação' }}</label>
+    <div class="col-md-5">
+        <div class="input-group">
+            
+        <input class="form-control" name="specialNeed[{{$sp->id}}][observação]" type="text" id="observação"  >
+        
+        </div>
+    </div>
+<hr/> 
+</div>   
+
+@endforeach
+
+
+
 
 <div class="form-group">
     <label class="col-md-4 control-label"></label>
@@ -172,17 +182,3 @@
 <script type="js/jquery.js"></script>
 <script type="js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    function habilitar(){
-        document.getElementById('ness').disabled = false;
-        document.getElementById('ness1').disabled = false;
-        document.getElementById('ness2').disabled = false;
-        document.getElementById('ness3').disabled = false;
-    }
-    function desabilitar(){
-        document.getElementById('ness').disabled = true;
-        document.getElementById('ness1').disabled = true;
-        document.getElementById('ness2').disabled = true;
-        document.getElementById('ness3').disabled = true;
-    }
-</script>        
