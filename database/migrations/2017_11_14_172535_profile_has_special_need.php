@@ -13,7 +13,7 @@ class ProfileHasSpecialNeed extends Migration
      */
     public function up()
     {
-        Schema::create('profile_especial_need', function (Blueprint $table) {
+        Schema::create('profile_special_need', function (Blueprint $table) {
             $table->integer('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles'); 
          
@@ -21,7 +21,7 @@ class ProfileHasSpecialNeed extends Migration
             $table->foreign('special_need_id')->references('id')->on('special_needs');
 
             $table->boolean('permanente')->nullable();
-            $table->string('observacao')->nullable();
+            $table->string('observação')->nullable();
 
         });
     }
