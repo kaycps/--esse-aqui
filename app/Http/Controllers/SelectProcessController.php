@@ -64,7 +64,7 @@ class SelectProcessController extends Controller
      */
     public function store(Request $request)
     {
-       
+      // dd($request);
         $careers = Career::all();
              
         $selectprocess = new SelectProcess;
@@ -73,9 +73,23 @@ class SelectProcessController extends Controller
         $selectprocess->nome = $request->nome;
         $selectprocess->descrição = $request->descrição; 
 
-        
 
-          if ($selectprocess->save()) {            
+
+          if ($selectprocess->save()) {  
+
+
+           $x = [];
+
+                $selected_curso = $request->cursos;
+                foreach ($selected_curso as $sc) {
+                    if (array_key_exists('id', $sc)) {
+                        $x[$sc['id']] = ['vagas' => $sc['vagas']];
+                    }
+                }
+                $selectprocess->careers()->sync($x);
+
+             
+                    
             return redirect('select-process')->with('message', 'SelectProcess added!');
         } else {
             return redirect('select-process.create')->with('message', 'Deu erro.');

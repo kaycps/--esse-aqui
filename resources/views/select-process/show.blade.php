@@ -31,9 +31,11 @@
                                     <tr><th> DataInicio </th><td> {{ $selectprocess->dataInicio }} </td></tr><tr><th> DataFim </th><td> {{ $selectprocess->dataFim }} </td></tr><tr><!-- <th> Ativo </th><td> {{ $selectprocess->ativo }} </td> --></tr><tr><th> Descrição </th><td> {{ $selectprocess->descrição }} </td></tr>
                                     
         
+                                    @foreach($selectprocess->careers as $career)
 
-                                    <th> Curso </th><td> {{ $selectprocess->descrição }} </td></tr>
-                                    <th> Vagas </th><td> {{ $selectprocess->descrição }} </td></tr>
+                                    <th> Curso </th><td> {{ $career->nome }} </td></tr>
+                                    <th> Vagas </th><td> {{ $career->pivot->vagas }} </td></tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
