@@ -13,9 +13,9 @@ class SelectProcessHasQuota extends Migration
      */
     public function up()
     {
-         Schema::create('select_process_quota', function (Blueprint $table) {
-            $table->integer('quota_id')->unsigned();
-            $table->foreign('quota_id')->references('id')->on('quotas'); 
+         Schema::create('quotum_select_process', function (Blueprint $table) {
+            $table->integer('quotum_id')->unsigned();
+            $table->foreign('quotum_id')->references('id')->on('quotums'); 
          
             $table->integer('select_process_id')->unsigned();
             $table->foreign('select_process_id')->references('id')->on('select_processes');
@@ -32,7 +32,7 @@ class SelectProcessHasQuota extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['quota_id']);
+        $table->dropForeign(['quotum_id']);
         $table->dropForeign(['select_process_id']);
        
     }

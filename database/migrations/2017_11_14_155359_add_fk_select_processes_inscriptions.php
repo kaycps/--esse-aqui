@@ -31,7 +31,7 @@ class AddFkSelectProcessesInscriptions extends Migration
         //chave cota
          Schema::table('inscriptions', function (Blueprint $table) {
             $table->integer('quota_id')->unsigned();
-            $table->foreign('quota_id')->references('id')->on('quotas');      
+            $table->foreign('quota_id')->references('id')->on('quotums');      
 
         });
     }

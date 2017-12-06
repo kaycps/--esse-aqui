@@ -9,6 +9,7 @@ use Illuminate\Database\Migrations\Migration;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Quotum;
 use App\Career;
 use App\SelectProcess;
 use Illuminate\Http\Request;
@@ -52,7 +53,8 @@ class SelectProcessController extends Controller
     public function create()
     {   
         $career = Career::all();
-        return view('select-process.create')->with('career',$career);
+        $cota = Quotum::all();
+        return view('select-process.create')->with('career',$career)->with('cota',$cota);
     }
 
     /**
@@ -89,7 +91,17 @@ class SelectProcessController extends Controller
                 $selectprocess->careers()->sync($x);
 
              
-                    
+            $y = [];
+
+                $cota_curso = $request->cotas;
+                foreach ($cota_curso as $c) {
+                    if(array_key_exists('id', $c)){
+                        $y[$c['id']] = ['vagas' => $c['vagas']];
+                    }        
+                }  
+
+                $selectprocess->quotas()->sync($c);
+
             return redirect('select-process')->with('message', 'SelectProcess added!');
         } else {
             return redirect('select-process.create')->with('message', 'Deu erro.');

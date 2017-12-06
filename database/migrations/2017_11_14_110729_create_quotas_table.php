@@ -12,7 +12,7 @@ class CreateQuotasTable extends Migration
      */
     public function up()
     {
-        Schema::create('quotas', function (Blueprint $table) {
+        Schema::create('quotums', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descrição')->nullable();
             $table->timestamps();
@@ -26,6 +26,6 @@ class CreateQuotasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('quotas');
+        Schema::drop('quotums');
     }
 }

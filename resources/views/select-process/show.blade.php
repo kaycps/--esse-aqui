@@ -37,6 +37,15 @@
 
                                     <th> Curso </th><td> {{ $career->nome }} </td></tr>
                                     <th> Vagas </th><td> {{ $career->pivot->vagas }} </td></tr>
+
+                                    @endforeach
+
+
+                                    @foreach($selectprocess->quotas as $cotas)
+
+                                    <th> Cotas </th><td> {{ $cotas->descrição }} </td></tr>
+                                    <th> Vagas </th><td> {{ $cotas->pivot->vagas }} </td></tr>
+                                    
                                     @endforeach
                                 </tbody>
                             </table>

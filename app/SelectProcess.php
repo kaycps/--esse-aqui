@@ -34,7 +34,7 @@ class SelectProcess extends Model
 
     public function quotas()
     {
-        return $this->belongsToMany('App\Quotum');
+        return $this->belongsToMany('App\Quotum')->withPivot('vagas');
     }
 
     public function inscriptions()

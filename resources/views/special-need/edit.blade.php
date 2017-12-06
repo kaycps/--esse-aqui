@@ -3,15 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-<<<<<<< HEAD
-<<<<<<< HEAD
-           
-=======
-            
->>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
-=======
-            
->>>>>>> c2d9fad1997c5247c08dd29d1c45c6d6a12ce99f
+
 
             <div class="col-md-9">
                 <div class="panel panel-default">

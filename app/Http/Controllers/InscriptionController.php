@@ -65,7 +65,7 @@ class InscriptionController extends Controller
      */
     public function store(Request $request, $id)
     {   
-        dd($request);
+        
         $user = Auth::user();
         $career = Career::find($id);        
         $quota = Quotum::all();

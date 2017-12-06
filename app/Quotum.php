@@ -11,7 +11,7 @@ class Quotum extends Model
      *
      * @var string
      */
-    protected $table = 'quotas';
+    protected $table = 'quotums';
 
     /**
     * The database primary key value.

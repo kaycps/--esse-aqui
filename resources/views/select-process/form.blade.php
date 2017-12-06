@@ -45,7 +45,31 @@
     <div class="form-group">
         <label for="vagas" class="col-md-4 control-label">{{ 'Vagas' }}</label>
         <div class="col-md-1">
-            <input class="form-control" name="cursos[{{$c->id}}][vagas]" type="text" id="descrição" />        
+            <input class="form-control" name="cursos[{{$c->id}}][vagas]" type="text" id="" />        
+        </div>
+    </div>
+
+    <hr />
+
+    
+
+@endforeach
+
+
+<h3>Cotas</h3>
+@foreach($cota as $b)
+    <div class="form-group ">
+        <label for="cota" class="col-md-4 control-label"></label>
+        <div class="col-md-6">
+            <input type="checkbox" name="cotas[{{$b->id}}][id]" value="{{$b->id}}" />
+            <label>{{ $b->descrição }}</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="vagas" class="col-md-4 control-label">{{ 'Vagas' }}</label>
+        <div class="col-md-1">
+            <input class="form-control" name="cotas[{{$b->id}}][vagas]" type="text" id="" />        
         </div>
     </div>
 
