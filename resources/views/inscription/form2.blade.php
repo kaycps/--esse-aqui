@@ -1,7 +1,7 @@
 
 @if(Auth::user()->admin==1)
 <div class="form-group {{ $errors->has('dataPagamento') ? 'has-error' : ''}}">
-    <label for="dataPagamento" class="col-md-4 control-label">{{ 'Datapagamento' }}</label>
+    <label for="dataPagamento" class="col-md-4 control-label">{{ 'Data de Pagamento' }}</label>
     <div class="col-md-6">
         <input class="form-control" name="dataPagamento" type="datetime-local" id="dataPagamento" value="{{ $inscription->dataPagamento or ''}}" >
         {!! $errors->first('dataPagamento', '<p class="help-block">:message</p>') !!}
@@ -10,7 +10,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('dataInscrição') ? 'has-error' : ''}}">
-    <label for="dataInscrição" class="col-md-4 control-label">{{ 'Datainscrição' }}</label>
+    <label for="dataInscrição" class="col-md-4 control-label">{{ 'Data de Inscrição' }}</label>
     <div class="col-md-6">
         <input class="form-control" name="dataInscrição" type="datetime-local" id="dataInscrição" value="{{ $inscription->dataInscrição or ''}}" >
         {!! $errors->first('dataInscrição', '<p class="help-block">:message</p>') !!}
@@ -33,7 +33,7 @@
 </div>
 
 <div class="form-group ">
-    <label for="quota" class="col-md-4 control-label">{{ 'Quota' }}</label>
+    <label for="quota" class="col-md-4 control-label">{{ 'Cotas' }}</label>
     <div class="col-md-6">
         <select name="quota">
             <?php foreach($quota as $quota): ?>

@@ -96,6 +96,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/public/js/validator.min.js"></script>
 </body>
 </html>
 

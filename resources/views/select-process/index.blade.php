@@ -6,8 +6,14 @@
            
 
             <div class="col-md-9">
+                @if(Session::has('success_message'))
+                    <p class="alert {{ Session::get('success-class', 'alert-success') }}">{{ Session::get('success_message') }}</p>
+                @endif
+                @if(Session::has('error_message'))
+                    <p class="alert {{ Session::get('success-class', 'alert-success') }}">{{ Session::get('error_message') }}</p>
+                @endif
                 <div class="panel panel-default">
-                    <div class="panel-heading">Processos seletivos</div>
+                    <div class="panel-heading">Processos Seletivos</div>
                     <div class="panel-body">
                         <a href="{{ url('/select-process/create') }}" class="btn btn-success btn-sm" title="Add New SelectProcess">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New

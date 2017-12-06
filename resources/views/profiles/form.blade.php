@@ -6,109 +6,120 @@
                 <i class="fa fa-user">
                 </i>
             </div>
-            <input class="form-control" name="nome" type="text" id="nome" value="{{ $profile->nome or ''}}" >
+            <input class="form-control" name="nome" type="text" id="nome" value="{{ $profile->nome or ''}}" required>
             {!! $errors->first('nome', '<p class="help-block">:message</p>') !!}
-        </div></div>
-    
-</div><div class="form-group {{ $errors->has('RG') ? 'has-error' : ''}}">
+        </div>
+    </div>
+</div>
+
+<div class="form-group {{ $errors->has('RG') ? 'has-error' : ''}}">
     <label for="RG" class="col-md-4 control-label">{{ 'Rg' }}</label>
     <div class="col-md-3">
-        <input class="form-control" name="RG" type="text" id="RG" value="{{ $profile->rg or ''}}" >
+        <input class="form-control" name="RG" type="text" id="RG" value="{{ $profile->rg or ''}}" required>
         {!! $errors->first('rg', '<p class="help-block">:message</p>') !!}
     </div>
-    
-</div><div class="form-group {{ $errors->has('CPF') ? 'has-error' : ''}}">
+</div>
+
+<div class="form-group {{ $errors->has('CPF') ? 'has-error' : ''}}">
     <label for="CPF" class="col-md-4 control-label">{{ 'Cpf' }}</label>
     <div class="col-md-3">
-        <input class="form-control" name="CPF" type="text" id="CPF" value="{{ $profile->cpf or ''}}" >
+        <input class="form-control" name="CPF" type="text" id="CPF" value="{{ $profile->cpf or ''}}" required>
         {!! $errors->first('cpf', '<p class="help-block">:message</p>') !!}
-    </div>
-    
-</div><div class="form-group {{ $errors->has('DataNascimento') ? 'has-error' : ''}}">
+    </div>   
+</div>
+
+<div class="form-group {{ $errors->has('DataNascimento') ? 'has-error' : ''}}">
     <label for="DataNascimento" class="col-md-4 control-label">{{ 'Data de nascimento' }}</label>
     <div class="col-md-4">
         <div class="input-group">
             <div class="input-group-addon">
-                <i class="fa fa-birthday-cake">
-                </i>
+                <i class="fa fa-birthday-cake"></i>
             </div>
-        <input class="form-control" name="DataNascimento" type="date" id="DataNascimento" value="{{ $profile->dataNascimento or ''}}" >
+        <input class="form-control" name="DataNascimento" type="date" id="DataNascimento" value="{{ $profile->dataNascimento or ''}}" required>
         {!! $errors->first('dataNascimento', '<p class="help-block">:message</p>') !!}
-        </div></div>
-    
-</div><div class="form-group {{ $errors->has('Sexo') ? 'has-error' : ''}}">
+        </div>
+    </div>    
+</div>
+
+<div class="form-group {{ $errors->has('Sexo') ? 'has-error' : ''}}">
     <label for="Sexo" class="col-md-4 control-label">{{ 'Sexo' }}</label>
     <div class="col-md-4">
-        <input class="form-control" name="Sexo" type="text" id="Sexo" value="{{ $profile->sexo or ''}}" >
+        <input class="form-control" name="Sexo" type="text" id="Sexo" value="{{ $profile->sexo or ''}}" required>
         {!! $errors->first('sexo', '<p class="help-block">:message</p>') !!}
     </div>
-    
-</div><div class="form-group {{ $errors->has('NomePai') ? 'has-error' : ''}}">
+</div>
+
+<div class="form-group {{ $errors->has('NomePai') ? 'has-error' : ''}}">
     <label for="NomePai" class="col-md-4 control-label">{{ 'Nome do pai' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="NomePai" type="text" id="NomePai" value="{{ $profile->nomePai or ''}}" >
+        <input class="form-control" name="NomePai" type="text" id="NomePai" value="{{ $profile->nomePai or ''}}" required>
         {!! $errors->first('nomePai', '<p class="help-block">:message</p>') !!}
-    </div>
-    
-</div><div class="form-group {{ $errors->has('NomeMãe') ? 'has-error' : ''}}">
+    </div>    
+</div>
+
+<div class="form-group {{ $errors->has('NomeMãe') ? 'has-error' : ''}}">
     <label for="NomeMãe" class="col-md-4 control-label">{{ 'Nome da mãe' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="NomeMãe" type="text" id="NomeMãe" value="{{ $profile->nomeMãe or ''}}" >
+        <input class="form-control" name="NomeMãe" type="text" id="NomeMãe" value="{{ $profile->nomeMãe or ''}}" required>
         {!! $errors->first('nomeMãe', '<p class="help-block">:message</p>') !!}
-    </div>
-    
-</div><div class="form-group {{ $errors->has('Passaporte') ? 'has-error' : ''}}">
+    </div>   
+</div>
+
+<div class="form-group {{ $errors->has('Passaporte') ? 'has-error' : ''}}">
     <label for="Passaporte" class="col-md-4 control-label">{{ 'Passaporte' }}</label>
     <div class="col-md-4">
         <div class="input-group">
             <div class="input-group-addon">
-                <i class="fa fa-plane">
-                </i>
+                <i class="fa fa-plane"></i>
             </div>
-        <input class="form-control" name="Passaporte" type="text" id="Passaporte" value="{{ $profile->passaporte or ''}}" >
+        <input class="form-control" name="Passaporte" type="text" id="Passaporte" value="{{ $profile->passaporte or ''}}" required>
         {!! $errors->first('passaporte', '<p class="help-block">:message</p>') !!}
-        </div></div>
-    
-</div><div class="form-group {{ $errors->has('Naturalidade') ? 'has-error' : ''}}">
+        </div>
+    </div>    
+</div>
+
+<div class="form-group {{ $errors->has('Naturalidade') ? 'has-error' : ''}}">
     <label for="Naturalidade" class="col-md-4 control-label">{{ 'Naturalidade' }}</label>
     <div class="col-md-6">
         <div class="input-group">
             <div class="input-group-addon">
-                <i class="fa fa-star">
-                </i>
+                <i class="fa fa-star"></i>
             </div>
-        <input class="form-control" name="Naturalidade" type="text" id="Naturalidade" value="{{ $profile->naturalidade or ''}}" >
+        <input class="form-control" name="Naturalidade" type="text" id="Naturalidade" value="{{ $profile->naturalidade or ''}}" required>
         {!! $errors->first('naturalidade', '<p class="help-block">:message</p>') !!}
-        </div></div>
-    
-</div><div class="form-group {{ $errors->has('Telefone') ? 'has-error' : ''}}">
+        </div>
+    </div>
+</div>
+<div class="form-group {{ $errors->has('Telefone') ? 'has-error' : ''}}">
     <label for="Telefone" class="col-md-4 control-label">{{ 'Telefone' }}</label>
     <div class="col-md-5">
         <div class="input-group">
             <div class="input-group-addon">
-                <i class="fa fa-phone">
-                </i>
+                <i class="fa fa-phone"></i>
             </div>
-        <input class="form-control" name="Telefone" type="text" id="Telefone" value="{{ $profile->telefone or ''}}" >
+        <input class="form-control" name="Telefone" type="text" id="Telefone" value="{{ $profile->telefone or ''}}" required>
         {!! $errors->first('telefone', '<p class="help-block">:message</p>') !!}
-        </div></div>
-    
-</div><div class="form-group {{ $errors->has('Escolaridade') ? 'has-error' : ''}}">
+        </div>
+    </div>    
+</div>
+
+<div class="form-group {{ $errors->has('Escolaridade') ? 'has-error' : ''}}">
     <label for="Escolaridade" class="col-md-4 control-label">{{ 'Escolaridade' }}</label>
     <div class="col-md-6">
         <div class="input-group">
             <div class="input-group-addon">
-                <i class="fa fa-book">
-                </i>
+                <i class="fa fa-book"></i>
             </div>
-        <input class="form-control" name="Escolaridade" type="text" id="Escolaridade" value="{{ $profile->escolaridade or ''}}" >
+        <input class="form-control" name="Escolaridade" type="text" id="Escolaridade" value="{{ $profile->escolaridade or ''}}" required>
         {!! $errors->first('escolaridade', '<p class="help-block">:message</p>') !!}
-        </div></div>
-    
-</div><div class="form-group {{ $errors->has('EmissorRG') ? 'has-error' : ''}}">
+        </div>
+    </div>   
+</div>
+
+<div class="form-group {{ $errors->has('EmissorRG') ? 'has-error' : ''}}">
     <label for="EmissorRG" class="col-md-4 control-label">{{ 'Emissor rg' }}</label>
     <div class="col-md-4">
-        <input class="form-control" name="EmissorRG" type="text" id="EmissorRG" value="{{ $profile->emissorRG or ''}}" >
+        <input class="form-control" name="EmissorRG" type="text" id="EmissorRG" value="{{ $profile->emissorRG or ''}}" required>
         {!! $errors->first('emissorRG', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

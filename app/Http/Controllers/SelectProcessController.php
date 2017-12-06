@@ -91,6 +91,7 @@ class SelectProcessController extends Controller
                 $selectprocess->careers()->sync($x);
 
              
+<<<<<<< HEAD
             $y = [];
 
                 $cota_curso = $request->cotas;
@@ -103,8 +104,12 @@ class SelectProcessController extends Controller
                 $selectprocess->quotas()->sync($c);
 
             return redirect('select-process')->with('message', 'SelectProcess added!');
+=======
+                    
+            return redirect('select-process')->with('success_message', 'Processo seletivo adicionado!');
+>>>>>>> 2ab7efbfce6b493eec7091c9f0e1f36ece4c9e7c
         } else {
-            return redirect('select-process.create')->with('message', 'Deu erro.');
+            return redirect('select-process.create')->with('error_message', 'Erro ao cadastrar.');
         }
 
         
